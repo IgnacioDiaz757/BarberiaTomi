@@ -821,13 +821,12 @@ img {
 
 .hero_overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    height: 50%;
+    height: 100%;
     width: 100%;
     z-index: 1;
-    background: -o-linear-gradient(271.87deg,rgba(32,32,32,0) 37.89%,#202020 82.56%);
-    background: linear-gradient(178.13deg,rgba(32,32,32,0) 37.89%,#202020 82.56%)
+    background: rgba(0,0,0,0.55)
 }
 
 @media screen and (min-width:767.98px) {
