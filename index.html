@@ -10,6 +10,7 @@
         <link rel="stylesheet preload" as="style" href="css/libs.min.css" />
 
         <link rel="stylesheet" href="css/index.min.css" />
+        <link rel="stylesheet" href="css/audio-player.css" />
     </head>
     <body>
         <header class="header" data-page="home">
@@ -538,6 +539,11 @@
             </div>
         </footer>
 
+        <div class="global-audio-player">
+            <audio id="global-audio" src="Img/ytmp3free.cc_tujamo-vinne-murotani-techno-party-bass-house-tech-house-youtubemp3free.org.mp3" loop></audio>
+            <button class="audio-toggle" type="button" aria-label="Pausar música"></button>
+        </div>
+
         <a
             href="https://api.whatsapp.com/send?phone=5493518615071"
             class="whatsapp-float"
@@ -619,5 +625,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
         <script src="js/supabaseClient.js"></script>
         <script src="js/hero-slides.js"></script>
+        <script src="js/audio-player.js"></script>
     </body>
 </html>
