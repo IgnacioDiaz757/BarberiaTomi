@@ -4,12 +4,41 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Galería | BARBERCROP</title>
+        <title>Galería  </title>
         <link rel="stylesheet preload" as="style" href="css/preload.min.css" />
         <link rel="stylesheet preload" as="style" href="css/icomoon.css" />
         <link rel="stylesheet preload" as="style" href="css/libs.min.css" />
 
         <link rel="stylesheet" href="css/gallery.min.css" />
+        <style>
+            /* Video en la card: mismo tamaño que la imagen */
+            .gallery_content-media_item .aspect__inner video.gallery-video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            /* Mobile: 2 imágenes por fila */
+            @media screen and (max-width: 767.98px) {
+                .gallery_content-media.row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 0 -5px;
+                }
+                .gallery_content-media_item {
+                    width: 50%;
+                    padding: 0 5px;
+                    margin-bottom: 12px;
+                    box-sizing: border-box;
+                }
+                .gallery_content-media_item .aspect__inner { overflow: hidden; }
+                .gallery_content-media_item.gallery-item-inview .gallery-img {
+                    filter: grayscale(0);
+                    transform: scale(1.08);
+                    transition: filter .5s ease-in-out, transform .5s ease-in-out;
+                }
+            }
+        </style>
     </head>
     <body>
         <header class="header" data-page="gallery">
@@ -48,14 +77,6 @@
                         </li>
                         <li class="header_nav-list_item nav-item" data-page="contacts">
                             <a class="nav-link" href="contacts.html">Contactame</a>
-                        </li>
-                        <li class="header_nav-list_item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="list-item nav-item" data-page="error">
-                                    <a class="dropdown-item" href="404.html">404</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -96,142 +117,7 @@
                                 <a data-target="dyeing" class="gallery_content-filters_filter" href="#">Coloración de cabello</a>
                             </li>
                         </ul>
-                        <div class="gallery_content-media">
-                            <figure class="gallery_content-media_item col-md-6" data-groups='["haircut", "dyeing"]' data-order="1">
-                                <a class="aspect" href="img/placeholder.jpg" data-caption="Image caption">
-                                    <div class="aspect_inner">
-                                        <picture>
-                                            <source
-                                                data-srcset="img/placeholder.jpg"
-                                                srcset="img/placeholder.jpg"
-                                                type="image/webp"
-                                            />
-                                            <img
-                                                class="gallery-img lazy"
-                                                data-src="img/placeholder.jpg"
-                                                src="img/placeholder.jpg"
-                                                alt="media"
-                                            />
-                                        </picture>
-                                    </div>
-                                </a>
-                            </figure>
-
-                            <figure class="gallery_content-media_item col-md-6" data-groups='["beard"]' data-order="2">
-                                <a class="aspect" href="img/placeholder.jpg" data-caption="Image caption">
-                                    <div class="aspect_inner">
-                                        <picture>
-                                            <source
-                                                data-srcset="img/placeholder.jpg"
-                                                srcset="img/placeholder.jpg"
-                                                type="image/webp"
-                                            />
-                                            <img
-                                                class="gallery-img lazy"
-                                                data-src="img/placeholder.jpg"
-                                                src="img/placeholder.jpg"
-                                                alt="media"
-                                            />
-                                        </picture>
-                                    </div>
-                                </a>
-                            </figure>
-
-                            <figure class="gallery_content-media_item col-md-6" data-groups='["beard", "haircut"]' data-order="3">
-                                <a class="aspect" href="img/placeholder.jpg" data-caption="Image caption">
-                                    <div class="aspect_inner">
-                                        <picture>
-                                            <source
-                                                data-srcset="img/placeholder.jpg"
-                                                srcset="img/placeholder.jpg"
-                                                type="image/webp"
-                                            />
-                                            <img
-                                                class="gallery-img lazy"
-                                                data-src="img/placeholder.jpg"
-                                                src="img/placeholder.jpg"
-                                                alt="media"
-                                            />
-                                        </picture>
-                                    </div>
-                                </a>
-                            </figure>
-
-                            <figure class="gallery_content-media_item col-md-6" data-groups='["beard", "haircut", "dyeing"]' data-order="4">
-                                <a class="aspect" href="img/placeholder.jpg" data-caption="Image caption">
-                                    <div class="aspect_inner">
-                                        <picture>
-                                            <source
-                                                data-srcset="img/placeholder.jpg"
-                                                srcset="img/placeholder.jpg"
-                                                type="image/webp"
-                                            />
-                                            <img
-                                                class="gallery-img lazy"
-                                                data-src="img/placeholder.jpg"
-                                                src="img/placeholder.jpg"
-                                                alt="media"
-                                            />
-                                        </picture>
-                                    </div>
-                                </a>
-                            </figure>
-
-                            <figure class="gallery_content-media_item col-md-6" data-groups='["haircut", "dyeing"]' data-order="5">
-                                <a class="aspect" href="img/placeholder.jpg" data-caption="Image caption">
-                                    <div class="aspect_inner">
-                                        <picture>
-                                            <source
-                                                data-srcset="img/placeholder.jpg"
-                                                srcset="img/placeholder.jpg"
-                                                type="image/webp"
-                                            />
-                                            <img
-                                                class="gallery-img lazy"
-                                                data-src="img/placeholder.jpg"
-                                                src="img/placeholder.jpg"
-                                                alt="media"
-                                            />
-                                        </picture>
-                                    </div>
-                                </a>
-                            </figure>
-
-                            <figure class="gallery_content-media_item col-md-6" data-groups='["dyeing"]' data-order="6">
-                                <a class="aspect" href="img/placeholder.jpg" data-caption="Image caption">
-                                    <div class="aspect_inner">
-                                        <picture>
-                                            <source
-                                                data-srcset="img/placeholder.jpg"
-                                                srcset="img/placeholder.jpg"
-                                                type="image/webp"
-                                            />
-                                            <img
-                                                class="gallery-img lazy"
-                                                data-src="img/placeholder.jpg"
-                                                src="img/placeholder.jpg"
-                                                alt="media"
-                                            />
-                                        </picture>
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="pagination gallery_pagination d-flex justify-content-center align-items-center">
-                        <a class="pagination_control btn btn--revert theme-element" href="#">Anterior</a>
-                        <ul class="pagination_pages d-flex">
-                            <li class="pagination_pages-page">
-                                <a class="theme-element btn btn--revert" href="#">1</a>
-                            </li>
-                            <li class="pagination_pages-page">
-                                <a class="theme-element btn btn--revert current" href="#">2</a>
-                            </li>
-                            <li class="pagination_pages-page">
-                                <a class="theme-element btn btn--revert" href="#">3</a>
-                            </li>
-                        </ul>
-                        <a class="pagination_control btn btn--revert theme-element" href="#">Siguiente</a>
+                        <div class="gallery_content-media row"></div>
                     </div>
                 </div>
             </section>
@@ -346,6 +232,8 @@
         </style>
 
         <script src="js/common.min.js"></script>
-        <script src="js/gallery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+        <script src="js/supabaseClient.js"></script>
+        <script src="js/gallery.supabase.js"></script>
     </body>
 </html>

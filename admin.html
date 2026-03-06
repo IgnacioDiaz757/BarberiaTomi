@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Admin | Tomi Barber</title>
+        <link rel="stylesheet preload" as="style" href="css/preload.min.css" />
+        <link rel="stylesheet preload" as="style" href="css/icomoon.css" />
+        <link rel="stylesheet preload" as="style" href="css/libs.min.css" />
+
+        <style>
+            body {
+                background-color: #111;
+                color: #fff;
+                font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            }
+
+            .admin-wrapper {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .admin-header {
+                padding: 16px 24px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .admin-title {
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+            }
+
+            .admin-main {
+                flex: 1;
+                padding: 24px;
+                max-width: 1120px;
+                margin: 0 auto;
+            }
+
+            .admin-card {
+                background-color: #181818;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.04);
+                margin-bottom: 24px;
+            }
+
+            .admin-card h2 {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+
+            .admin-text-muted {
+                color: #888;
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .admin-form-group {
+                margin-bottom: 16px;
+            }
+
+            .admin-form-group label {
+                display: block;
+                font-size: 13px;
+                margin-bottom: 6px;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: #bbb;
+            }
+
+            .admin-input,
+            .admin-select,
+            .admin-textarea {
+                width: 100%;
+                background-color: #111;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: #fff;
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            .admin-input[type="file"] {
+                padding: 8px;
+                background-color: transparent;
+            }
+
+            .admin-textarea {
+                resize: vertical;
+                min-height: 80px;
+            }
+
+            .admin-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 18px;
+                border-radius: 999px;
+                border: none;
+                background-color: #eb1616;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: background-color 0.2s ease, transform 0.1s ease;
+            }
+
+            .admin-btn:hover {
+                background-color: #ff2626;
+                transform: translateY(-1px);
+            }
+
+            .admin-btn:disabled {
+                opacity: 0.6;
+                cursor: default;
+                transform: none;
+            }
+
+            .admin-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 16px;
+            }
+
+            .admin-item-card {
+                background-color: #141414;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .admin-item-media {
+                position: relative;
+                padding-top: 65%;
+                overflow: hidden;
+            }
+
+            .admin-item-media img,
+            .admin-item-media video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .admin-item-body {
+                padding: 10px 12px 12px;
+                font-size: 13px;
+            }
+
+            .admin-item-title {
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+
+            .admin-item-meta {
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #999;
+                margin-bottom: 8px;
+            }
+
+            .admin-item-actions {
+                display: flex;
+                justify-content: flex-end;
+                gap: 8px;
+            }
+
+            .admin-badge {
+                display: inline-flex;
+                align-items: center;
+                padding: 2px 8px;
+                border-radius: 999px;
+                font-size: 11px;
+                background-color: rgba(235, 22, 22, 0.12);
+                color: #ff7878;
+            }
+
+            .admin-alert {
+                font-size: 13px;
+                padding: 8px 10px;
+                border-radius: 6px;
+                margin-bottom: 12px;
+            }
+
+            .admin-alert--info {
+                background-color: rgba(255, 255, 255, 0.04);
+                color: #ddd;
+            }
+
+            .admin-alert--error {
+                background-color: rgba(235, 22, 22, 0.15);
+                color: #ffb3b3;
+            }
+
+            .admin-tagline {
+                font-size: 12px;
+                color: #bbb;
+            }
+
+            @media (max-width: 767.98px) {
+                .admin-main {
+                    padding: 16px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="admin-wrapper">
+            <header class="admin-header">
+                <div>
+                    <div class="admin-title">Panel admin · Galería</div>
+                    <div class="admin-tagline">Gestioná las fotos y videos que se muestran en la web.</div>
+                </div>
+                <button id="logout-btn" class="admin-btn" type="button" style="display: none">Cerrar sesión</button>
+            </header>
+
+            <main class="admin-main">
+                <section id="admin-login" class="admin-card">
+                    <h2>Ingresar</h2>
+                    <p class="admin-alert admin-alert--info">
+                        Usá el email y contraseña que creaste en Supabase (Auth) para el rol de administrador.
+                    </p>
+                    <form id="admin-login-form">
+                        <div class="admin-form-group">
+                            <label for="admin-email">Email</label>
+                            <input id="admin-email" class="admin-input" type="email" required />
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="admin-password">Contraseña</label>
+                            <input id="admin-password" class="admin-input" type="password" required />
+                        </div>
+                        <button class="admin-btn" type="submit" id="login-submit-btn">Ingresar</button>
+                        <div id="login-error" class="admin-alert admin-alert--error" style="display: none"></div>
+                    </form>
+                </section>
+
+                <section id="admin-panel" style="display: none">
+                    <div class="admin-card">
+                        <h2>Cargar nuevo elemento</h2>
+                        <form id="admin-upload-form">
+                            <div class="admin-form-group">
+                                <label for="media-file">Imagen o video</label>
+                                <input id="media-file" class="admin-input" type="file" accept="image/*,video/*" required />
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="media-title">Título (opcional)</label>
+                                <input id="media-title" class="admin-input" type="text" placeholder="Ej: Degradé bajo" />
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="media-description">Descripción (opcional)</label>
+                                <textarea
+                                    id="media-description"
+                                    class="admin-textarea"
+                                    placeholder="Detalle del corte o del servicio"
+                                ></textarea>
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="media-category">Categoría</label>
+                                <select id="media-category" class="admin-select" required>
+                                    <option value="haircut">Corte de pelo</option>
+                                    <option value="beard">Barba y bigote</option>
+                                    <option value="dyeing">Coloración de cabello</option>
+                                </select>
+                            </div>
+                            <button class="admin-btn" type="submit" id="upload-submit-btn">Subir a la galería</button>
+                            <div id="upload-message" class="admin-alert admin-alert--info" style="display: none"></div>
+                        </form>
+                    </div>
+
+                    <div class="admin-card">
+                        <h2>Elementos actuales</h2>
+                        <div id="admin-items-empty" class="admin-alert admin-alert--info" style="display: none">
+                            Todavía no hay elementos en la galería. Subí una imagen o video para empezar.
+                        </div>
+                        <div id="admin-items-error" class="admin-alert admin-alert--error" style="display: none"></div>
+                        <div id="admin-items-grid" class="admin-grid"></div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h2>Carrusel del hero (inicio)</h2>
+                        <p class="admin-text-muted">Las imágenes que subas aquí se muestran en el carrusel de la página de inicio.</p>
+                        <form id="admin-hero-form">
+                            <div class="admin-form-group">
+                                <label for="hero-file">Imagen para el carrusel</label>
+                                <input id="hero-file" class="admin-input" type="file" accept="image/*" required />
+                            </div>
+                            <button class="admin-btn" type="submit" id="hero-submit-btn">Agregar al carrusel</button>
+                            <div id="hero-message" class="admin-alert admin-alert--info" style="display: none"></div>
+                        </form>
+                        <div id="hero-items-empty" class="admin-alert admin-alert--info" style="display: none; margin-top: 1rem;">
+                            No hay imágenes en el carrusel. Subí al menos una para la página de inicio.
+                        </div>
+                        <div id="hero-items-error" class="admin-alert admin-alert--error" style="display: none; margin-top: 1rem;"></div>
+                        <div id="hero-items-grid" class="admin-grid" style="margin-top: 1rem;"></div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Supabase UMD -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+        <script src="js/supabaseClient.js"></script>
+        <script src="js/admin.js"></script>
+    </body>
+</html>
+

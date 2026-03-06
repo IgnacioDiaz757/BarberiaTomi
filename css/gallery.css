@@ -834,6 +834,21 @@ img {
     transition: .5s ease-in-out
 }
 
+/* Mobile: al entrar en vista al scrollear, la foto pasa a color y se agranda un poco */
+@media screen and (max-width: 767.98px) {
+    .gallery_content-media_item .aspect__inner {
+        overflow: hidden
+    }
+
+    .gallery_content-media_item.gallery-item-inview .gallery-img {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+        transform: scale(1.08)
+    }
+}
+
 .gallery_pagination {
     margin-top: 20px
 }
